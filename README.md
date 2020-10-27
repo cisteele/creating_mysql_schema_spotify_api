@@ -30,3 +30,7 @@ This python script requires spotipy, pymysql, and sqlalchemy.
 
 ## spotify_database_schema
 This image displays a basic schema for the created tables.
+
+
+## sql_exercises
+A sample of some SQL queries run on the created database when the default playlists ("Techno 2020" and "Deep House 2020') are loaded.
