@@ -75,8 +75,7 @@ track_fields = {'track_id' : 'varchar(22)',
                  'artist_id' : 'varchar(22)',
                  'album_id' : 'varchar(22)',
                  'duration' : 'int', # in ms
-                 'track_popularity' : 'int',
-                 'playlist_id' : 'varchar(22)'}
+                 'track_popularity' : 'int'}
 
 artist_fields = {'artist_id' : 'varchar(22)',
                  'artist_name' : 'varchar()',
