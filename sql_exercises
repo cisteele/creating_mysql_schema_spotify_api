@@ -1,0 +1,84 @@
+-- Find longest song and its duration
+SELECT track_name, duration
+FROM track
+ORDER BY duration
+LIMIT 1;
+
+-- Returns:
+-- The Silence	125625
+
+
+-- Find the most popular song
+SELECT track_name, track_popularity
+FROM track
+ORDER BY track_popularity DESC
+LIMIT 1;
+
+-- Returns:
+-- Head & Heart (feat. MNEK)	94
+
+
+-- Find the artists with the highest frequency
+SELECT artist.artist_name, COUNT(artist_id)
+FROM artist
+GROUP BY artist_id
+HAVING COUNT(artist_id)=
+    (SELECT MAX(artist_freq) FROM
+        (SELECT artist_id, COUNT(artist_id) AS artist_freq
+         FROM artist	
+         GROUP BY artist_id) t1);
+
+-- Returns:
+-- Joel Corry	2
+-- MEDUZA	2
+-- Regard	2
+-- Alok	2
+-- Sonny Fodera	2
+-- HADES	2
+-- R3HAB	2
+-- Braaten & Chrit Leaf	2
+-- Dallerium	2
+
+
+-- Find the most popular song among artists with the highest frequency
+SELECT track.track_name, artist.artist_name, track.track_popularityrelease_daterelease_daterelease_date
+FROM track
+JOIN artist ON artist.artist_id = track.artist_id
+WHERE artist.artist_id IN
+	(SELECT artist.artist_id AS freq_artists
+	FROM artist
+	GROUP BY artist_id
+	HAVING COUNT(artist_id)=
+		(SELECT MAX(artist_count) FROM
+			(SELECT artist_id, COUNT(artist_id) AS artist_count
+			FROM artist	
+			GROUP BY artist_id) AS max_artist_freq))
+LIMIT 1;
+
+-- Returns:
+-- Head & Heart (feat. MNEK)	Joel Corry	94
+
+
+-- Find the most popular album that came out in the last 3 months
+
+SELECT album_name, album_popularity
+FROM album
+WHERE release_date >= DATE_ADD(CURDATE(), INTERVAL -3 MONTH)
+ORDER BY album_popularity DESC
+LIMIT 1;
+
+-- Returns:
+-- Nectar	79
+
+
+-- Find the most popular album that came out in the last 3 months and display its artist
+
+SELECT artist.artist_name, album.album_name, album.album_popularity
+FROM album
+JOIN artist ON artist.artist_id = album.artist_id
+WHERE album.release_date >= DATE_ADD(CURDATE(), INTERVAL -3 MONTH)
+ORDER BY album.album_popularity DESC
+LIMIT 1;
+
+-- Returns:
+-- Joji	Nectar	79
