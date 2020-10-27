@@ -81,17 +81,13 @@ track_fields = {'track_id' : 'varchar(22)',
 artist_fields = {'artist_id' : 'varchar(22)',
                  'artist_name' : 'varchar()',
                  'artist_followers' : 'int',
-                 'genres' : 'varchar()',  # list of strings
                  'artist_popularity' : 'int'}
 
 album_fields = {'album_id' : 'varchar(22)',
                  'album_name' : 'varchar()',
                  'artist_id' : 'varchar(22)',
-                 'genres' : 'varchar()',  # list of strings
                  'album_popularity' : 'int',
                  'record_label' : 'varchar()',
-                 'release_date' : 'date',
-                 'track_list' : 'varchar()',  # list of strings
                  'track_count' : 'int',}
 
 playlist_fields = {'playlist_id' : 'varchar(22)',
