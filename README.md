@@ -32,7 +32,7 @@ This text file contains the urls of all playlists to scrape for songs to add to 
 
 
 ## create_mysql_table_spotify.py
-This python script will read the three test files, scrape the desired playlists from the spotify API, and create the "track", "artist", and "album" tables in the specified mysql database.  An error will occur if there are any tables with those names in the database already. 
+This python script will read the three config text files, scrape the desired playlists from the spotify API, and create the "track", "artist", and "album" tables in the specified MySQL database.  An error will occur if there are any tables with those names in the database already. 
 
 This python script requires spotipy, pymysql, and sqlalchemy.
 
