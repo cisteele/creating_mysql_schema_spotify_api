@@ -1,4 +1,4 @@
-# Creating a MySQL schema for the spotify api
+# Creating a MySQL schema for the Spotify API
 Creates a schema of relational tables in a local MySQL database by aggregating data from the Spotify API.
 
 
