@@ -20,7 +20,7 @@ mysql_db database
 
 
 ## spotify_credentials.txt
-This text file contains the credentials to connect to a the Spotify API.  Be sure to update the values in the right column (cid, secret) with your Sppotify developer details.
+This text file contains the credentials to connect to a the Spotify API.  Be sure to update the values in the right column (cid, secret) with your Spotify developer details.
 
 client_id cid
 
