@@ -11,8 +11,11 @@ This image displays a basic schema for the created tables.
 This text file contains the credentials to connect to a local mysql database.  Be sure to update the values in the right column (user, password, host, database) with your servers details.
 
 mysql_user user
+
 mysql_pw password
+
 mysql_host host
+
 mysql_db database
 
 
@@ -20,6 +23,7 @@ mysql_db database
 This text file contains the credentials to connect to a the Spotify API.  Be sure to update the values in the right column (cid, secret) with your Sppotify developer details.
 
 client_id cid
+
 client_secret secret
 
 
